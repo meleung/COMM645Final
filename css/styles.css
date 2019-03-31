@@ -2,7 +2,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 1em;
   line-height: 2em;
-  background: url("../images/bg.gif") #FFF repeat-x; }
+  background: url("../images/bg.gif") white repeat-x; }
 
 main {
   width: 940px;
@@ -28,11 +28,11 @@ nav {
       font-size: 0.8em;
       margin-right: 10px; }
       nav ul li a {
-        color: #E65C43;
+        color: #e65c43;
         text-decoration: none;
         letter-spacing: -0.01em; }
         nav ul li a:hover {
-          color: #FFF; }
+          color: white; }
 
 header {
   width: inherit;
@@ -43,18 +43,18 @@ header {
     max-width: 100%;
     height: auto; }
   header h1 {
-    color: #E65C43;
+    color: #e65c43;
     font-weight: 100;
     font-size: 4em;
     line-height: 0; }
   header h2 {
-    color: #FFF;
+    color: white;
     font-weight: 900;
     font-size: 2.5em;
     line-height: 0;
     margin-bottom: 70px; }
   header h3 {
-    color: #666;
+    color: #666666;
     font-weight: 400;
     font-size: 2em;
     line-height: 0;
@@ -63,22 +63,22 @@ header {
 #headline {
   width: 100%;
   height: 130px;
-  background: #F25C43;
+  background: #f25c43;
   text-align: center;
   margin: 0 auto; }
   #headline h1 {
-    color: #FFF;
-    font-size: 2.5em;
+    color: white;
     font-weight: 100;
+    font-size: 2.5em;
     padding-top: 50px; }
 
 #content {
   width: 940px;
   margin: 20px auto; }
   #content h3 {
-    color: #666;
-    font-size: 2em;
-    font-weight: 400; }
+    color: #666666;
+    font-weight: 400;
+    font-size: 2em; }
   #content #products {
     width: 460px;
     float: left; }
@@ -96,16 +96,16 @@ header {
 .greybar {
   width: 100%;
   height: 90px;
-  background: #F5F6F6;
+  background: #f5f6f6;
   clear: both;
   padding-top: 30px; }
 
 footer {
   width: 100%;
   height: 120px;
-  background: #30353D;
+  background: #30353d;
   text-align: center;
-  color: #FFF;
+  color: white;
   padding-top: 50px; }
 
 .social-media {
@@ -114,13 +114,13 @@ footer {
   .social-media div {
     float: left;
     margin-right: 5px; }
-    .social-media div.one {
-      background: url("../images/social-media.png") 0 0; }
-    .social-media div.two {
+    .social-media div:nth-of-type(1) {
+      background: url("../images/social-media.png") 0px 0; }
+    .social-media div:nth-of-type(2) {
       background: url("../images/social-media.png") -38px 0; }
-    .social-media div.three {
+    .social-media div:nth-of-type(3) {
       background: url("../images/social-media.png") -76px 0; }
-    .social-media div.four {
+    .social-media div:nth-of-type(4) {
       background: url("../images/social-media.png") -114px 0; }
   .social-media a {
     display: block;

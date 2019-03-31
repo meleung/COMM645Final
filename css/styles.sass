@@ -1,11 +1,29 @@
+// Variables
+$defaultFont: 'Roboto', sans-serif
+$pageWidth: 940px
+$marginWidth: 20px
+$primaryColor: rgb(230,92,67)
+$secondaryColor: rgb(255,255,255)
+$neutralColor: rgb(102,102,102)
+
+// Mixins
+@mixin headerStyle($fontColor, $fontSize, $fontWeight)
+	color: $fontColor
+	font-weight: $fontWeight
+	font-size: $fontSize
+
+// Functions
+@function leftOffset ($itemIndex, $itemWidth)
+	@return (($itemIndex - 1) * -1 * $itemWidth)
+
 body
-	font-family: 'Roboto', sans-serif
+	font-family: $defaultFont
 	font-size: 1em
 	line-height: 2em
-	background: url('../images/bg.gif') #FFF repeat-x
+	background: url('../images/bg.gif') $secondaryColor repeat-x
 
 main
-	width: 940px
+	width: $pageWidth
 	margin: 0 auto
 	padding: 0 10px
 
@@ -28,11 +46,11 @@ nav
 			font-size: 0.8em
 			margin-right: 10px
 			a
-				color: #E65C43
+				color: $primaryColor
 				text-decoration: none
 				letter-spacing: -0.01em
 				&:hover
-					color: #FFF
+					color: $secondaryColor
 header
 	width: inherit
 	clear: both
@@ -42,42 +60,32 @@ header
 		max-width: 100%
 		height: auto
 	h1
-		color: #E65C43
-		font-weight: 100
-		font-size: 4em
+		@include headerStyle($primaryColor, 4em, 100)
 		line-height: 0
 	h2
-		color: #FFF
-		font-weight: 900
-		font-size: 2.5em
+		@include headerStyle($secondaryColor, 2.5em, 900)
 		line-height: 0
 		margin-bottom: 70px
 	h3
-		color: #666
-		font-weight: 400
-		font-size: 2em
+		@include headerStyle($neutralColor, 2em, 400)
 		line-height: 0
 		margin-bottom: 50px
 #headline
 	width: 100%
 	height: 130px
-	background: #F25C43
+	background: adjust-color($primaryColor, $red: 12)
 	text-align: center
 	margin: 0 auto
 	h1
-		color: #FFF
-		font-size: 2.5em
-		font-weight: 100
+		@include headerStyle($secondaryColor, 2.5em, 100)
 		padding-top: 50px
 #content
-	width: 940px
-	margin: 20px auto
+	width: $pageWidth
+	margin: $marginWidth auto
 	h3
-		color: #666
-		font-size: 2em
-		font-weight: 400
+		@include headerStyle($neutralColor, 2em, 400)
 	#products
-		width: 460px
+		width: ($pageWidth - $marginWidth) / 2
 		float: left
 		img
 			float: left
@@ -87,21 +95,21 @@ header
 		h4
 			line-height: 1em
 	#testimonials
-		width: 460px
+		width: ($pageWidth - $marginWidth) / 2
 		float: right
 .greybar
 	width: 100%
 	height: 90px
-	background: #F5F6F6
+	background: rgb(245,246,246)
 	clear: both
 	padding-top: 30px
 
 footer
 	width: 100%
 	height: 120px
-	background: #30353D
+	background: rgb(48,53,61)
 	text-align: center
-	color: #FFF
+	color: $secondaryColor
 	padding-top: 50px
 
 .social-media
@@ -110,14 +118,9 @@ footer
 	div
 		float: left
 		margin-right: 5px
-		&.one
-			background: url('../images/social-media.png') 0 0
-		&.two
-			background: url('../images/social-media.png') -38px 0
-		&.three
-			background: url('../images/social-media.png') -76px 0
-		&.four
-			background: url('../images/social-media.png') -114px 0
+		@for $i from 1 through 4
+			&:nth-of-type(#{$i})
+				background: url('../images/social-media.png') leftOffset($i, 38px) 0
 	a
 		display: block
 		width: 36px
