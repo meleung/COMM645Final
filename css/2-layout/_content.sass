@@ -1,5 +1,14 @@
 // Content
 
+#headline
+	@include size(100%, 130px)
+	background: adjust-color($primaryColor, $red: 12)
+	text-align: center
+	margin: 0 auto
+	h1
+		@include headerStyle($secondaryColor, 2.5em, 100)
+		padding-top: 50px
+
 #content
 	width: $pageWidth
 	margin: $marginWidth auto
@@ -10,9 +19,9 @@
 		float: left
 		img
 			float: left
-			margin-right: 20px
+			margin-right: $marginWidth
 		article
-			margin-bottom: 40px
+			margin-bottom: 2 * $marginWidth
 		h4
 			line-height: 1em
 	#testimonials

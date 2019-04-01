@@ -1,15 +1,13 @@
 // Footer
 
 .greybar
-	width: 100%
-	height: 90px
+	@include size(100%, 90px)
 	background: rgb(245,246,246)
 	clear: both
 	padding-top: 30px
 
 footer
-	width: 100%
-	height: 120px
+	@include size(100%, 120px)
 	background: rgb(48,53,61)
 	text-align: center
 	color: $secondaryColor
@@ -23,9 +21,8 @@ footer
 		margin-right: 5px
 		@for $i from 1 through 4
 			&:nth-of-type(#{$i})
-				background: getImageURL('social-media.png') leftOffset($i, 38px) 0
+				background: getImageURL('social-media.png') leftOffset($i, $spriteSize + $spriteOffset) 0
 	a
 		display: block
-		width: 36px
-		height: 36px
+		@include size($spriteSize, $spriteSize)
 		text-indent: -9999px
