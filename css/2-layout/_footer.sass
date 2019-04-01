@@ -1,0 +1,31 @@
+// Footer
+
+.greybar
+	width: 100%
+	height: 90px
+	background: rgb(245,246,246)
+	clear: both
+	padding-top: 30px
+
+footer
+	width: 100%
+	height: 120px
+	background: rgb(48,53,61)
+	text-align: center
+	color: $secondaryColor
+	padding-top: 50px
+
+.social-media
+	margin: 0 auto
+	width: 165px
+	div
+		float: left
+		margin-right: 5px
+		@for $i from 1 through 4
+			&:nth-of-type(#{$i})
+				background: getImageURL('social-media.png') leftOffset($i, 38px) 0
+	a
+		display: block
+		width: 36px
+		height: 36px
+		text-indent: -9999px

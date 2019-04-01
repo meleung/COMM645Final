@@ -1,0 +1,20 @@
+// Content
+
+#content
+	width: $pageWidth
+	margin: $marginWidth auto
+	h3
+		@include headerStyle($neutralColor, 2em, 400)
+	#products
+		width: ($pageWidth - $marginWidth) / 2
+		float: left
+		img
+			float: left
+			margin-right: 20px
+		article
+			margin-bottom: 40px
+		h4
+			line-height: 1em
+	#testimonials
+		width: ($pageWidth - $marginWidth) / 2
+		float: right

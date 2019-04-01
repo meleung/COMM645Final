@@ -1,0 +1,7 @@
+// Functions
+
+@function leftOffset($itemIndex, $itemWidth)
+	@return (($itemIndex - 1) * -1 * $itemWidth)
+
+@function getImageURL($imagePath)
+	@return url("#{$imageDirectory}/#{$imagePath}")
